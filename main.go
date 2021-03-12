@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/ta9mi1shi1/toggl/cmd"
+	"github.com/ta9mi1shi1/toggl/cmd/root"
 )
 
 type exitCode int
@@ -18,7 +18,7 @@ func main() {
 }
 
 func run() exitCode {
-	rootCmd := cmd.NewCmdRoot()
+	rootCmd := root.NewCmd()
 	if err := rootCmd.Execute(); err != nil {
 		return exitError
 	}
